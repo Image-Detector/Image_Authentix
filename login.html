@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Login to Image Forgery Detection System">
+    <title>Login - Image Forgery Detection System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: rgba(171, 193, 242, 1);
+        }
+
+        .login-container {
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .content-wrapper {
+            display: flex;
+            width: 100%;
+            gap: 20px;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            width: 38%;
+            padding: 2rem;
+        }
+
+        .branding-container {
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-size: 40px;
+            line-height: 1.2;
+            letter-spacing: 3.2px;
+            color: #000000;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .brand-image {
+            width: 100%;
+            max-width: 530px;
+            height: auto;
+            margin-top: 172px;
+            object-fit: contain;
+        }
+
+        .right-column {
+            width: 62%;
+            background-color: #FFFFFF;
+            border-radius: 40px 0 0 40px;
+            padding: 4rem 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-form {
+            width: 100%;
+            max-width: 575px;
+            padding: 0 1rem;
+        }
+
+        .form-title {
+            font-size: 30px;
+            font-weight: 800;
+            color: #000000;
+            margin-bottom: 3rem;
+            letter-spacing: 2.4px;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            color: #9D9D9D;
+            margin-bottom: 0.5rem;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 0;
+            border: none;
+            border-bottom: 1px solid #9D9D9D;
+            font-size: 16px;
+            background: transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-bottom: 2px solid rgba(91, 134, 229, 1);
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background-color: rgba(91, 134, 229, 1);
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 3rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover,
+        .submit-button:focus {
+            background-color: rgba(71, 114, 209, 1);
+        }
+
+        .signup-link {
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #000000;
+            font-size: 16px;
+        }
+
+        .signup-text-bold {
+            color: rgba(91, 134, 229, 1);
+            font-weight: 800;
+            text-decoration: none;
+            margin-left: 0.5rem;
+        }
+
+        .signup-text-bold:hover,
+        .signup-text-bold:focus {
+            text-decoration: underline;
+        }
+
+        .social-login {
+            display: flex;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .social-button {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid rgba(91, 134, 229, 1);
+            border-radius: 8px;
+            background-color: #FFFFFF;
+            color: #000000;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-button:hover,
+        .social-button:focus {
+            background-color: rgba(91, 134, 229, 0.1);
+        }
+
+        @media (max-width: 991px) {
+            .content-wrapper {
+                flex-direction: column;
+            }
+
+            .left-column,
+            .right-column {
+                width: 100%;
+            }
+
+            .right-column {
+                border-radius: 40px 40px 0 0;
+                padding: 2rem 1rem;
+            }
+
+            .brand-image {
+                margin-top: 2rem;
+            }
+
+            .social-login {
+                flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .submit-button,
+            .social-button,
+            .form-input {
+                transition: none;
+            }
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .form-input:invalid:not(:focus):not(:placeholder-shown) + .error-message {
+            display: block;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <main class="login-container">
+        <div class="content-wrapper">
+            <div class="left-column">
+                <div class="branding-container">
+                    <h1 class="brand-title">
+                        Image Forgery<br>Detection System
+                    </h1>
+                    <img src="avatar.png" 
+                         alt="Image Forgery Detection System Illustration" 
+                         class="brand-image"
+                         width="530"
+                         height="530"
+                         loading="lazy">
+                </div>
+            </div>
+            <div class="right-column">
+                <form class="login-form" 
+                      action="/login" 
+                      method="POST" 
+                      novalidate>
+                    <h2 class="form-title">Sign-in</h2>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               class="form-input" 
+                               required 
+                               autocomplete="email"
+                               placeholder=" "
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                               aria-required="true">
+                        <span class="error-message" aria-live="polite">
+                            Please enter a valid email address
+                        </span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" 
+                               id="password" 
+                               name="password" 
+                               class="form-input" 
+                               required 
+                               minlength="8"
+                               placeholder=" "
+                               aria-required="true">
+                        <span class="error-message" aria-live="polite">
+                            Please enter your password
+                        </span>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">
+                        Login
+                    </button>
+                    
+                    <p class="signup-link">
+                        Don't have an account?
+                        <a href="signup.html" class="signup-text-bold">Sign up</a>
+                    </p>
+                    
+                    <div class="social-login">
+                        <button type="button" 
+                                class="social-button" 
+                                aria-label="Login with Google">
+                            Login with Google
+                        </button>
+                        <button type="button" 
+                                class="social-button" 
+                                aria-label="Login with Facebook">
+                            Login with Facebook
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
