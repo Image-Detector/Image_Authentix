@@ -1,362 +1,64 @@
-<div class="homepage">
-    <header class="header">
-      <nav class="nav">
-        <div class="logo">Image Forgery Detection System</div>
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="login.html"><button class="login-btn">Login</button></a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Forgery Detection Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a href="#" class="logo">
+            <img src="eye.png" alt="AI Logo">
+            <span class="nav-item" style="font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: bold; color: #333;">Forgery Detection</span>
+          </a></li> 
+        <li><a href="#">
+          <i class="fas fa-upload"></i>
+          <span class="nav-item">Upload Image</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-chart-bar"></i>
+          <span class="nav-item">Analyze</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-file-alt"></i>
+          <span class="nav-item">Summary</span>
+        </a></li>
+        <li><a href="#">
+          <i class="fas fa-database"></i>
+          <span class="nav-item">Reports</span>
+        </a></li>
+        <li><a href="#" class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item">Log Out</span>
+        </a></li>
+      </ul>
+    </nav>
 
-        </ul>
-      </nav>
-    </header>
-  
-    <main>
-      <section class="hero">
-        <div class="hero-content">
-          <h1>Detect Image Manipulation with AI</h1>
-          <p>Advanced technology to identify forged and manipulated images</p>
-          <button class="try-now-btn" onclick="window.location.href='login.html'">Try Now</button>
-
+    <section class="main">
+      <div class="main-header">
+        <h1>Welcome, User</h1>
+        <p>Ready to detect image forgery?</p>
+      </div>
+      <div class="dashboard">
+        <div class="card">
+          <h3>Upload Image</h3>
+          <button onclick="uploadImage()">Browse File</button>
         </div>
-        <div class="hero-image">
-          <img src="hero-image.webp" alt="AI Image Analysis Visualization" id ="img1" style="box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);"/>
+        <div class="card">
+          <h3>Analyze</h3>
+          <button onclick="analyzeImage()">Start Analysis</button>
         </div>
-      </section>
-  
-      <section class="features">
-        <div class="feature-card">
-          <img src="accuracy1.png" alt="High Accuracy Icon" />
-          <h3>99.9% Accuracy</h3>
-          <p>State-of-the-art detection algorithms</p>
-        </div>
-        <div class="feature-card">
-          <img src="real-time.png" alt="Real-time Analysis Icon" />
-          <h3>Real-time Analysis</h3>
-          <p>Instant results within seconds</p>
-        </div>
-        <div class="feature-card">
-          <img src="security.png" alt="Secure Analysis Icon" />
-          <h3>Secure Analysis</h3>
-          <p>End-to-end encrypted processing</p>
-        </div>
-      </section>
-  
-      <section class="how-it-works">
-        <h2>How It Works</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <h3>Upload Image</h3>
-            <p>Upload any image for analysis</p>
-          </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <h3>AI Processing</h3>
-            <p>Advanced AI analyzes the image</p>
-          </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <h3>Get Results</h3>
-            <p>Receive detailed forgery report</p>
-          </div>
-        </div>
-      </section>
-  
-      <section class="cta">
-        <h2>Start Detecting Image Forgery Today</h2>
-        <p>Join thousands of users who trust our system</p>
-        <button class="signup-btn"  onclick="window.location.href='signup.html'">Sign Up Now</button>
-      </section>
-    </main>
-  
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="#press">Press</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#docs">Documentation</a></li>
-            <li><a href="#support">Support</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#privacy">Privacy Policy</a></li>
-            <li><a href="#terms">Terms of Service</a></li>
-            <li><a href="#security">Security</a></li>
-          </ul>
+        <div class="card">
+          <h3>View Reports</h3>
+          <button onclick="viewReports()">View History</button>
         </div>
       </div>
-    </footer>
+    </section>
   </div>
-  
-  <style>
-  :root {
-    --primary-color: rgba(91, 134, 229, 1);
-    --secondary-color: rgba(171, 193, 242, 1);
-    --text-color: #333;
-    --white: #ffffff;
-    --gray: #777676;
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'PP Telegraf', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-  }
-  
-  .homepage {
-    width: 100%;
-    overflow-x: hidden;
-  }
-  
-  .header {
-    background-color: var(--white);
-    padding: 1rem 5%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  
-  .logo {
-    font-family: 'Aboreto', serif;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-  }
-  
-  .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-    align-items: center;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-  }
-  #img1{
-    border-radius: 15px;
-  }
-  
-  .login-btn {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 0.5rem 1.5rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-  }
-  
-  .hero {
-    display: flex;
-    align-items: center;
-    padding: 5rem 5%;
-    background-color: var(--secondary-color);
-    min-height: 80vh;
-  }
-  
-  .hero-content {
-    flex: 1;
-    padding-right: 5rem;
-  }
-  
-  .hero-content h1 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-  
-  .hero-content p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-  
-  .try-now-btn {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 1rem 2.5rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  
-  .hero-image {
-    flex: 1;
-  }
-  
-  .hero-image img {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-  }
-  
-  .features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    padding: 5rem 5%;
-    background-color: var(--white);
-  }
-  
-  .feature-card {
-    text-align: center;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .feature-card img {
-    width: 64px;
-    height: 64px;
-    margin-bottom: 1.5rem;
-  }
-  
-  .how-it-works {
-    padding: 5rem 5%;
-    background-color: #f8f9fa;
-    text-align: center;
-  }
-  
-  .how-it-works h2 {
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-  }
-  
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .step {
-    position: relative;
-    padding: 2rem;
-  }
-  
-  .step-number {
-    width: 40px;
-    height: 40px;
-    background-color: var(--primary-color);
-    color: var(--white);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
-    font-weight: 600;
-  }
-  
-  .cta {
-    text-align: center;
-    padding: 5rem 5%;
-    background-color: var(--primary-color);
-    color: var(--white);
-  }
-  
-  .cta h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .signup-btn {
-    background-color: var(--white);
-    color: var(--primary-color);
-    border: none;
-    padding: 1rem 2.5rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    cursor: pointer;
-  }
-  
-  .footer {
-    background-color: #1a1a1a;
-    color: var(--white);
-    padding: 4rem 5%;
-  }
-  
-  .footer-content {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .footer-section h4 {
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-  }
-  
-  .footer-section ul {
-    list-style: none;
-  }
-  
-  .footer-section ul li {
-    margin-bottom: 0.8rem;
-  }
-  
-  .footer-section a {
-    color: var(--gray);
-    text-decoration: none;
-  }
-  
-  @media (max-width: 991px) {
-    .hero {
-      flex-direction: column;
-      text-align: center;
-      padding: 3rem 5%;
-    }
-  
-    .hero-content {
-      padding-right: 0;
-      margin-bottom: 3rem;
-    }
-  
-    .features,
-    .steps {
-      grid-template-columns: 1fr;
-    }
-  
-    .footer-content {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-  
-    .nav-links {
-      display: none;
-    }
-  }
-  </style>
+  <script src="script.js"></script>
+</body>
+</html>
