@@ -1,9 +1,0 @@
-keras
-matplotlib
-numpy
-pillow
-pyqt5
-seaborn
-scikit-learn
-tensorflow
-tqdm
