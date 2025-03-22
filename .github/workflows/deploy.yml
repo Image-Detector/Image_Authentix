@@ -27,11 +27,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      - name: Move index.html to Root
+        run: |
+          mkdir -p public
+          cp -r Image_authentix/templates/* public/
+
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload only the 'templates' folder where index.html is located
-          path: 'Image_authentix/templates'
+          path: 'public'
 
       - name: Deploy to GitHub Pages
         id: deployment
