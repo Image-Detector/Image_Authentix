@@ -15,7 +15,7 @@ MarkupSafe==3.0.2
 PyMySQL==1.1.0
 tensorflow==2.19.0
 keras==3.9.0
-opencv-python==4.11.0 # Use headless OpenCV       # For load_model and deep learning operations
+opencv-python==4.11.0.86 # Use headless OpenCV       # For load_model and deep learning operations
 pillow==10.0.0            # For Image processing (Image, ImageChops, ImageEnhance)   
 numpy==1.24.3             # For array operations and ML model compatibility
 email-validator==2.0.0    # For email validation with Flask-Mail
