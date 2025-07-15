@@ -4,7 +4,7 @@ The proposed system for image forgery detection is a comprehensive approach that
 
 ![image](https://github.com/user-attachments/assets/f91fef82-9066-46b8-8b04-e63eca3ea1da)
 
-Image Forgery Detection System
+🖼️ Image Forgery Detection System
 
 This project is a web-based AI system that detects whether an image is forged or authentic using deep learning and image forensics. It integrates Error Level Analysis (ELA), Convolutional Neural Networks (CNN), and EXIF metadata analysis into a Flask-based web application with authentication and report generation features.
 
