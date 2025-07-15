@@ -40,65 +40,71 @@ Metadata Analysis: The app extracts EXIF data like camera info, GPS location, ti
 
 PDF Report: Results are compiled into a downloadable report with image, prediction, and metadata.
 
-📁 Project Structure
+🚀 Project Setup
 
-.
-├── app.py                # Flask backend with all routes and logic
-├── forgery_detection.py  # Forgery analysis functions and model
-├── templates/            # Jinja2 HTML templates
-├── static/               # CSS/JS/image assets
-├── uploads/              # Uploaded and processed image storage
-├── reports/              # Generated PDF reports
-├── trained_model.h5      # Trained CNN model file
-└── requirements.txt      # Python dependencies
+✅ Prerequisites
 
-🚧 Installation & Setup
+Python 3.8 or higher
 
-Prerequisites
+pip (Python package manager)
 
-Python 3.8+
+📦 Installation
 
-pip
-
-Install
-
+1. Clone the repository:
 git clone https://github.com/yourusername/image-forgery-detection.git
 cd image-forgery-detection
+
+2. Install the required dependencies:
 pip install -r requirements.txt
 
-Run
-
-python app.py
-
-Visit http://127.0.0.1:5000 in your browser.
-
-Email Configuration
-
-Edit app.py:
-
+3. Set up email credentials for OTP verification in app.py:
 app.config['MAIL_USERNAME'] = 'your-email@gmail.com'
 app.config['MAIL_PASSWORD'] = 'your-app-password'
 
-Use Gmail App Passwords if 2FA is enabled.
+4. Run the application:
+python app.py
 
-📲 API Endpoint
+5. Visit: http://127.0.0.1:5000 in your browser.
 
-POST /api/detect-forgery
+⚙️ Implementation Details
 
-curl -X POST -F "file=@/path/to/image.jpg" http://localhost:5000/api/detect-forgery
+🔸 ELA Processing
 
-Response:
+The uploaded image is compressed and compared to the original using PIL.
 
-{
-  "success": true,
-  "result": "Fake",
-  "confidence": 97.45,
-  "metadata": {
-    "camera_model": "Canon EOS",
-    "location": "17° 22' 23.45\" N, 78° 29' 12.78\" E",
-    ...
-  }
-}
+The resulting error image is enhanced to highlight manipulation artifacts.
+
+🔸 CNN-Based Forgery Detection
+
+The ELA image is resized and normalized.
+
+The CNN model (trained_model.h5) predicts if the image is real or fake.
+
+A confidence score is provided.
+
+🔸 Heatmap Highlighting
+
+For forged images, Sobel edge detection is applied.
+
+A heatmap is overlaid on the original image to show suspect areas.
+
+🔸 Metadata Extraction
+
+Extracts EXIF data: camera make/model, GPS coordinates, timestamps.
+
+Flags inconsistencies (e.g., editing software, timestamp mismatches).
+
+🔸 User Interface & History
+
+Flask-based routes support login, signup, OTP verification, image upload.
+
+An analysis history is stored per user in an SQLite database.
+
+🔸 PDF Report Generation
+
+Users can download a report for each analysis.
+
+Includes metadata, classification result, and heatmap image.
 
 📈 Model Info
 
